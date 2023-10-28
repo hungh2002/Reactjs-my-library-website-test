@@ -1,0 +1,26 @@
+#navigationBar {
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+     
+    .home {
+      width: 20%;
+      float: left;
+      left: 0;
+      background-color: #04AA6D;
+    }
+      
+    li{
+      display: inline;
+      a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+      }
+    }
+  }
+}

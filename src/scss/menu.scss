@@ -1,0 +1,41 @@
+#menu {
+  display: inline-block;
+  float: right;
+  right: 0;
+  width: 30%;
+  
+  .menu-btn {
+    background-color: #04AA6D;
+    padding: 16px;
+    float: right;
+    right: 0;
+  }
+    
+  .menu-content {
+    float: right;
+    right: 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+      
+    a {
+      display: block;
+    }
+    
+    a:hover {
+      background-color: #f1f1f1
+    }
+  }
+}
+
+#menu:hover {
+  .menu-content {
+    display: block;
+  }
+
+  .menu-btn {
+    background-color: #3e8e41;
+  }
+}
