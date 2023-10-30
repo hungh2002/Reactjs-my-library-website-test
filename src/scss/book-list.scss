@@ -1,0 +1,9 @@
+#book-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  a {
+    padding: 1%;
+  }
+}

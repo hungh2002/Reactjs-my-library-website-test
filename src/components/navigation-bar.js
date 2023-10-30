@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import './../scss/navigation-bar.scss';
 import Menu from './menu.js';

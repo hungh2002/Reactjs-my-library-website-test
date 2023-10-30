@@ -1,18 +1,18 @@
-import './../scss/menu.scss';
+import { Link } from "react-router-dom";
 
-const Menu =() => {
+import "./../scss/menu.scss";
+
+const Menu = () => {
   return (
     <li id="menu">
-      <div class="menu-btn">
-        Menu
-      </div>
-      <div class="menu-content">
-        <a href="#">Link 1</a>
+      <div className="menu-btn">Menu</div>
+      <div className="menu-content">
+        <Link to={"/add-book"}>Add Book</Link>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
       </div>
     </li>
   );
-}
+};
 
 export default Menu;

@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import App from './../App';
-import ErrorPage from './../pages/error-page.js';
-import Booklist from './../pages/book-list.js';
-import ArticleDetail from './../pages/article-detail.js';
+import App from "./../App";
+import ErrorPage from "./../pages/error-page.js";
+import BookList from "./../pages/book-list.js";
+import ArticleDetail from "./../pages/article-detail.js";
+import AddBook from "./../pages/add-book.js";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Booklist />,
+        element: <BookList />,
       },
       {
         path: "article-detail",
         element: <ArticleDetail />,
+      },
+      {
+        path: "add-book",
+        element: <AddBook />,
       },
     ],
   },
