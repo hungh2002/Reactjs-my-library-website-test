@@ -1,10 +1,12 @@
-import toBase64 from './../services/base64.js';
-
 import { useState } from 'react';
-import axios from 'axios';
+
+
+import toBase64 from './../services/base64.js';
+import { apiPostData } from '../services/axiosAPI.js';
 
 const AddBook = () => {
   const [thumbnail, setThumbnail] = useState('');
+
   const handleOneChangeThumbnail = async (file) => {
     const data = await toBase64(file);
     setThumbnail(`${data}`);
@@ -16,12 +18,10 @@ const AddBook = () => {
     const formData = new FormData(form);
     const title = formData.get('title');
     const content = formData.get('content');
+    const data = { title: title, content: content, thumbnail: thumbnail };
+    let url = '/book';
 
-    await axios.post('http://localhost:8080/api/books', {
-      title: title,
-      content: content,
-      thumbnail: thumbnail,
-    });
+    await apiPostData(url, data);
   };
 
   return (
