@@ -15,19 +15,21 @@ const apiGetAllData = async (url) => {
 
 const apiPostData = async (url, data) => {
   try {
-    bookData.post(url, data);
+    await bookData.post(url, data, {
+      headers: { 'Content-Type': 'application/json`' },
+    });
   } catch (error) {
     console.error('api POST method (post new book) ', error);
   }
 };
 
-const apiFindById = async (url, id) => {
+const apiGetDataWithParams = async (url, params) => {
   try {
-    const response = await bookData.get(url, { params: { bookId: id } });
+    const response = await bookData.get(url, { params: params });
     return response.data;
   } catch (error) {
     console.error('api GET method (find by id) ', error);
   }
 };
 
-export { apiGetAllData, apiPostData, apiFindById };
+export { apiGetAllData, apiPostData, apiGetDataWithParams };

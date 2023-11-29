@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import { apiFindById } from '../services/axiosAPI.js';
+import { apiGetDataWithParams } from '../services/axiosAPI.js';
+import './../scss/article-detail.scss';
 
-const ArticleDetail = ({ params }) => {
+const ArticleDetail = () => {
   const { bookId } = useParams();
   const [data, setData] = useState({});
 
@@ -15,7 +16,7 @@ const ArticleDetail = ({ params }) => {
   const getDataById = async () => {
     let url = '/book/article-detail';
     try {
-      const response = await apiFindById(url, bookId);
+      const response = await apiGetDataWithParams(url, { bookId: bookId });
       setData(response);
     } catch (error) {
       console.error(error);
@@ -36,10 +37,15 @@ const ArticleDetail = ({ params }) => {
   // };
 
   return (
-    <article>
-      <img src=
-      {`http://localhost:8080/${data.thumbnail}`} />
-    </article>
+    <div id='article-detail'>
+      <figure>
+        <img src={`http://localhost:8080/${data.thumbnail}`} alt={data.title} />
+        <figcaption>{data.title}</figcaption>
+      </figure>
+      <article>
+        <img src={`http://localhost:8080/${data.thumbnail}`} />
+      </article>
+    </div>
   );
 };
 
